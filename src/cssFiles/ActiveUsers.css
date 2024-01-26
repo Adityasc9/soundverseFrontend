@@ -1,0 +1,11 @@
+.line{
+    height: 650px;
+    width: 1200px;
+    text-align: center;
+}
+.averages{
+    display: flex;
+    justify-content: space-evenly;
+
+    align-items: center;
+}

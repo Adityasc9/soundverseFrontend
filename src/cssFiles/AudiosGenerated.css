@@ -1,0 +1,13 @@
+.bar{
+    height: 650px;
+    width: 1200px;
+    text-align: center;
+}
+.barContainer{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    height: 800px;
+    margin-top: 100px;
+}

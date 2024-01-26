@@ -1,0 +1,20 @@
+.pieContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  align-items: center;
+  height: 35rem;
+}
+.proficiency {
+  height: 500px;
+  width: 400px;
+}
+.category {
+  height: 500px;
+  width: 400px;
+}
+.content {
+  height: 500px;
+  width: 400px;
+}
