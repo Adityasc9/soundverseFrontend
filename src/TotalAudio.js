@@ -6,7 +6,7 @@ function TotalAudio() {
   const [duration, setDuration] = useState(0);
   useEffect(() => {
     axios
-      .get("https://soundverse-backend-lac.vercel.app//api/total")
+      .get("https://soundverse-backend-khaki.vercel.app/api/total")
       .then((response) => setDuration(response.data.total.split(" ")))
       .catch((error) => console.log(error));
   }, []);

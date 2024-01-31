@@ -8,21 +8,21 @@ function MongoConnection() {
 
   useEffect(() => {
     axios
-      .get("https://soundverse-backend-lac.vercel.app//api/userA")
+      .get("https://soundverse-backend-khaki.vercel.app//api/userA")
       .then((response) => setActivities(response.data))
       .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
     axios
-      .get("https://soundverse-backend-lac.vercel.app//api/users")
+      .get("https://soundverse-backend-khaki.vercel.app//api/users")
       .then((response) => setUsers(response.data))
       .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
     axios
-      .get("https://soundverse-backend-lac.vercel.app//api/audios")
+      .get("https://soundverse-backend-khaki.vercel.app//api/audios")
       .then((response) => setAudios(response.data))
       .catch((error) => console.log(error));
   }, []);
