@@ -10,7 +10,7 @@ function PowerUsers(props){
         activityCount.set(userId, activityCount.get(userId)+1);
     }
     let powerUsers = getPowerUsers(activityCount, props.users);
-    
+    console.log(powerUsers)
 
 
 

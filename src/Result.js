@@ -100,7 +100,7 @@ function Result() {
         </button>
         {/* <EngagementDWM accessToken={accessToken} /> */}
         {/* <EngagementByCategory users={data.usersByCategory} activities={data.activities} /> */}
-        {/* <PowerUsers activities={data.activities} users = {data.users} /> */}
+        <PowerUsers activities={data.activities} users={data.users} />
       </div>
     );
   }
@@ -115,35 +115,35 @@ function MongoConnection() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/audioTypes")
+      .get("https://soundverse-backend-lac.vercel.app//api/audioTypes")
       .then((response) => setAudioTypes(response.data))
       .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/userA")
+      .get("https://soundverse-backend-lac.vercel.app//api/userA")
       .then((response) => setActivities(response.data))
       .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/users")
+      .get("https://soundverse-backend-lac.vercel.app//api/users")
       .then((response) => setUsers(response.data))
       .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/audios")
+      .get("https://soundverse-backend-lac.vercel.app//api/audios")
       .then((response) => setAudios(response.data))
       .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/prompts")
+      .get("https://soundverse-backend-lac.vercel.app//api/prompts")
       .then((response) => setPrompts(response.data))
       .catch((error) => console.log(error));
   }, []);

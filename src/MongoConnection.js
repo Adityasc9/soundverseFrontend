@@ -8,21 +8,21 @@ function MongoConnection() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/userA")
+      .get("https://soundverse-backend-lac.vercel.app//api/userA")
       .then((response) => setActivities(response.data))
       .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/users")
+      .get("https://soundverse-backend-lac.vercel.app//api/users")
       .then((response) => setUsers(response.data))
       .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/audios")
+      .get("https://soundverse-backend-lac.vercel.app//api/audios")
       .then((response) => setAudios(response.data))
       .catch((error) => console.log(error));
   }, []);
@@ -32,25 +32,21 @@ function MongoConnection() {
     music_producer: [],
     singer_songwriter: [],
     influencer: [],
-    film_maker: []
-  }
-  for(let user of users){
-    if(user.desc != null){
-        if(user.desc.identity === "Singer/ Songwriter"){
-            usersByIdentity.singer_songwriter.push(user);
-        }
-        else if(user.desc.identity === "Influencer"){
-            usersByIdentity.influencer.push(user);
-        }
-        else if (user.desc.identity === "Music Producer") {
+    film_maker: [],
+  };
+  for (let user of users) {
+    if (user.desc != null) {
+      if (user.desc.identity === "Singer/ Songwriter") {
+        usersByIdentity.singer_songwriter.push(user);
+      } else if (user.desc.identity === "Influencer") {
+        usersByIdentity.influencer.push(user);
+      } else if (user.desc.identity === "Music Producer") {
         usersByIdentity.music_producer.push(user);
-        }
-        else if (user.desc.identity === "Film Maker") {
+      } else if (user.desc.identity === "Film Maker") {
         usersByIdentity.film_maker.push(user);
-        }
-        else{
-            usersByIdentity.other.push(user);
-        }
+      } else {
+        usersByIdentity.other.push(user);
+      }
     }
   }
   console.log("users:", usersByIdentity);
@@ -58,4 +54,3 @@ function MongoConnection() {
 
   return <h1>connected and displayed response</h1>;
 }
-

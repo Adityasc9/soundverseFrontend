@@ -19,7 +19,6 @@ function AudioTypeBar(props) {
       typeObject[type._id] = type.audioType;
     }
   }
-  console.log(typeObject);
   let typeCount = {};
   for (let audio of audios) {
     if (!Object.keys(audio).includes("audioType")) {
