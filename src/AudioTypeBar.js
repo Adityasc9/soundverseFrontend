@@ -22,7 +22,8 @@ function AudioTypeBar(props) {
   let typeCount = {};
   for (let audio of audios) {
     if (!Object.keys(audio).includes("audioType")) {
-      if (!Object.keys(typeCount).includes(typeCount["soundverse_default"])) {
+      console.log(audio)
+      if (!Object.keys(typeCount).includes("65545e7a85c7a3c48460ac03")) {
         typeCount["65545e7a85c7a3c48460ac03"] = 0;
       }
       typeCount["65545e7a85c7a3c48460ac03"] += 1;
@@ -108,8 +109,14 @@ function AudioTypeBar(props) {
         min: 0,
         max: Math.ceil(Math.max(...Object.values(data)) / 500) * 5000,
         ticks: {
+          color:"White",
           stepSize: 1000,
         },
+      },
+      x:{
+        ticks:{
+          color:"white"
+        }
       },
     },
   };
@@ -159,6 +166,7 @@ function AudioTypeBar(props) {
   };
   return (
     <div>
+      <h2>Audio Types</h2>
       <div className="bar">
         <Bar data={barData} options={barOptions} />
       </div>

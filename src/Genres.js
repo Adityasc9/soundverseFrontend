@@ -191,7 +191,7 @@ function Genres(props){
         {
           label: "Top Instruments",
           data: topIntruments.map((item) => item[1]),
-          backgroundColor: "rgba(255, 99, 132, 0.6)",
+          backgroundColor: "rgba(255, 99, 132)",
         },
       ],
     };
@@ -199,6 +199,11 @@ function Genres(props){
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
+        legend: {
+          labels: {
+            color: "white",
+          },
+        },
         datalabels: {
           color: "white",
           font: {
@@ -208,11 +213,17 @@ function Genres(props){
         },
       },
       scales: {
+        x: {
+          ticks: {
+            color: "White",
+          },
+        },
         y: {
           min: 0,
           max: Math.ceil(Math.max(...Object.values(topIntruments))) + 200,
           ticks: {
             stepSize: Math.max(...Object.values(topIntruments)) / 10,
+            color: "white",
           },
         },
       },
@@ -224,7 +235,7 @@ function Genres(props){
         {
           label: "Top Vibes",
           data: topVibes.map((item) => item[1]),
-          backgroundColor: "rgba(20, 99, 20, 0.5)",
+          backgroundColor: "rgba(20, 99, 20)",
         },
       ],
     };
@@ -232,6 +243,11 @@ function Genres(props){
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
+        legend: {
+          labels: {
+            color: "white",
+          },
+        },
         datalabels: {
           color: "white",
           font: {
@@ -241,10 +257,16 @@ function Genres(props){
         },
       },
       scales: {
+        x: {
+          ticks: {
+            color: "White",
+          },
+        },
         y: {
           min: 0,
           max: Math.ceil(Math.max(...Object.values(topVibes))) + 200,
           ticks: {
+            color: "white",
             stepSize: Math.max(...Object.values(topVibes)) / 10,
           },
         },
@@ -256,7 +278,7 @@ function Genres(props){
         {
           label: "Top Genres",
           data: topGenres.map((item) => item[1]),
-          backgroundColor: "rgba(99, 20, 99, 0.4)",
+          backgroundColor: "rgba(99, 20, 99)",
         },
       ],
     };
@@ -264,19 +286,30 @@ function Genres(props){
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
+        legend: {
+          labels: {
+            color: "white",
+          },
+        },
         datalabels: {
           color: "white",
           font: {
             weight: "bold",
             size: 15,
           },
-        }
+        },
       },
       scales: {
+        x: {
+          ticks: {
+            color: "White",
+          },
+        },
         y: {
           min: 0,
           max: Math.ceil(Math.max(...Object.values(topGenres))) + 200,
           ticks: {
+            color: "white",
             stepSize: Math.max(...Object.values(topGenres)) / 10,
           },
         },

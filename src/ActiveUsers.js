@@ -105,6 +105,11 @@ function ActiveUsers(props) {
   };
   const options = {
     plugins: {
+      legend: {
+        labels: {
+          color: "white",
+        },
+      },
       datalabels: {
         display: false, // Hide data labels
       },
@@ -112,10 +117,22 @@ function ActiveUsers(props) {
     responsive: true,
     maintainAspectRatio: false,
     scales: {
+      x: {
+        grid: {
+          color: "grey", // Set X axis grid line color to white
+        },
+        ticks: {
+          color: "White",
+        },
+      },
       y: {
         min: 0,
         max: Math.max(...MAU) + 100,
+        grid: {
+          color: "grey", // Set X axis grid line color to white
+        },
         ticks: {
+          color: "White",
           // forces step size to be 50 units
           stepSize: 200,
         }, // Set the desired Y-axis scale step

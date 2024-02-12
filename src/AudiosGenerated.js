@@ -42,6 +42,7 @@ function AudiosGenerated(props) {
         {
           label: "Total duration",
           data: Object.values(roundedData),
+          backgroundColor: "rgba(0, 159, 200)",
         },
       ],
     };
@@ -55,25 +56,39 @@ function AudiosGenerated(props) {
     const options = {
       responsive: true,
       plugins: {
+        legend: {
+          labels: {
+            color: "white",
+          },
+        },
         datalabels: {
           color: "white",
           font: {
             weight: "bold",
             size: 15,
           },
-          rotation: '-90',
-          
+          rotation: "-90",
+
           display: true,
           formatter: absoluteFormatterTouching,
         },
       },
       maintainAspectRatio: false,
       scales: {
+        x: {
+          ticks: {
+            color: "White",
+          },
+        },
         y: {
           min: 0,
-          max: Math.ceil(Math.max(...Object.values(roundedData))/5000)*5000,
+          max: Math.ceil(Math.max(...Object.values(roundedData)) / 5000) * 5000,
           ticks: {
             stepSize: 5000,
+            color: "White",
+          },
+          grid: {
+            color: "grey", // Set X axis grid line color to white
           },
         },
       },

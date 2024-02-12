@@ -69,22 +69,22 @@ function StackedActivities(props){
         {
           label: "Arranger Closed",
           data: allActivities["arranger_closed"],
-          backgroundColor: "rgba(99, 20, 20, 0.8)",
+          backgroundColor: "rgba(99, 20, 20, 1)",
         },
         {
           label: "Arranger Opened",
           data: allActivities["arranger_opened"],
-          backgroundColor: "rgba(20, 20, 99, 0.8)",
+          backgroundColor: "rgba(20, 20, 99, 1)",
         },
         {
           label: "Audio Exported",
           data: allActivities["audio_exported"],
-          backgroundColor: "rgba(255, 69, 0, 0.8)",
+          backgroundColor: "rgba(255, 69, 0, 1)",
         },
         {
           label: "Project Created",
           data: allActivities["project_created"],
-          backgroundColor: "rgba(50, 50, 255, 0.8)",
+          backgroundColor: "rgba(50, 50, 255, 1)",
         },
         {
           label: "Studio Closed",
@@ -94,32 +94,32 @@ function StackedActivities(props){
         {
           label: "Studio Opened",
           data: allActivities["studio_opened"],
-          backgroundColor: "rgba(0, 128, 128, 0.8)",
+          backgroundColor: "rgba(0, 128, 128, 1)",
         },
         {
           label: "Sign Out",
           data: allActivities["sign_out"],
-          backgroundColor: "rgba(148, 0, 211, 0.7)",
+          backgroundColor: "rgba(148, 0, 211, 1)",
         },
         {
           label: "Sign In",
           data: allActivities["sign_in"],
-          backgroundColor: "rgba(255, 140, 0, 0.7)",
+          backgroundColor: "rgba(255, 140, 0, 1)",
         },
         {
           label: "AI magic tools",
           data: allActivities["ai_magic_tool_used"],
-          backgroundColor: "rgba(20, 99, 20, 0.7)",
+          backgroundColor: "rgba(20, 99, 20, 1)",
         },
         {
           label: "Processing Complete",
           data: allActivities["processing_complete"],
-          backgroundColor: "rgba(50, 205, 50, 0.7)",
+          backgroundColor: "rgba(50, 205, 50, 1)",
         },
         {
           label: "Processing Start",
           data: allActivities["processing_start"],
-          backgroundColor: "rgba(0, 0, 205, 0.7)",
+          backgroundColor: "rgba(0, 0, 205, 1)",
         },
       ],
     };
@@ -127,6 +127,12 @@ function StackedActivities(props){
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
+        legend: {
+          display: true,
+          labels: {
+            color: "white", // Set legend text color to white
+          },
+        },
         datalabels: {
           color: "white",
           font: {
@@ -140,13 +146,17 @@ function StackedActivities(props){
       scales: {
         y: {
           min: 0,
-          max: Math.max(allActivities["studio_opened"])*10,
+          max: Math.max(allActivities["studio_opened"]) * 10,
           ticks: {
+            color:"white",
             stepSize: 500,
           },
           stacked: true,
         },
         x: {
+          ticks:{
+            color:"white"
+          },
           stacked: true,
         },
       },

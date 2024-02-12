@@ -31,7 +31,7 @@ function DemographicPies(props) {
         label: "Frequency",
         data: Object.values(proficiencies),
         borderColor: "black",
-        backgroundColor:['rgb(255, 165, 0,0.5)','rgb(0, 128, 255,0.5)','rgb(255, 0, 0,0.5)','rgb(0, 200, 150,0.8)'],
+        backgroundColor:['rgb(255, 165, 0,1)','rgb(0, 128, 255,1)','rgb(255, 0, 0,1)','rgb(0, 200, 150,0.8)'],
         hoverOffset: 20,
       },
     ],
@@ -42,13 +42,13 @@ function DemographicPies(props) {
       legend: {
         display: true,
         labels: {
-          color: "Black", // Set legend text color to white
+          color: "white", // Set legend text color to white
         },
       },
       title: {
         display: true,
         text: "Proficiency distribution",
-        color: "Black",
+        color: "white",
         font: { size: lineFont },
       },
       datalabels: {
@@ -67,7 +67,7 @@ function DemographicPies(props) {
         label: "Frequency",
         data: Object.values(contentTypes),
         borderColor: "black",
-        backgroundColor: ['rgb(255, 165, 0, 0.5)', 'rgb(0, 128, 255, 0.5)', 'rgb(255, 0, 0, 0.5)', 'rgb(0, 200, 150, 0.8)', 'rgb(128, 0, 128, 0.7)', 'rgb(200, 100, 100, 0.6)'],
+        backgroundColor: ['rgb(255, 165, 0, 1)', 'rgb(0, 128, 255, 1)', 'rgb(255, 0, 0, 1)', 'rgb(0, 200, 150, 0.8)', 'rgb(128, 0, 128, 1)', 'rgb(200, 100, 100, 1)'],
         hoverOffset: 20,
       },
     ],
@@ -78,13 +78,13 @@ function DemographicPies(props) {
       legend: {
         display: true,
         labels: {
-          color: "Black", // Set legend text color to white
+          color: "white", // Set legend text color to white
         },
       },
       title: {
         display: true,
         text: "Content type distribution",
-        color: "Black",
+        color: "white",
         font: { size: lineFont },
       },
       datalabels: {
@@ -103,7 +103,7 @@ function DemographicPies(props) {
         label: "Frequency",
         data: Object.values(categories),
         borderColor: "black",
-        backgroundColor: ['rgb(255, 165, 0, 0.5)', 'rgb(0, 128, 255, 0.5)', 'rgb(255, 0, 0, 0.5)', 'rgb(0, 200, 150, 0.8)', 'rgb(128, 0, 128, 0.7)'],
+        backgroundColor: ['rgb(255, 165, 0, 1)', 'rgb(0, 128, 255, 1)', 'rgb(255, 0, 0, 1)', 'rgb(0, 200, 150, 0.8)', 'rgb(128, 0, 128, 1)'],
         hoverOffset: 20,
       },
     ],
@@ -114,13 +114,13 @@ function DemographicPies(props) {
       legend: {
         display: true,
         labels: {
-          color: "Black", // Set legend text color to white
+          color: "white", // Set legend text color to white
         },
       },
       title: {
         display: true,
         text: "Onboarding category distribution",
-        color: "Black",
+        color: "white",
         font: { size: lineFont },
       },
       datalabels: {
