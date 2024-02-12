@@ -3,6 +3,7 @@ import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import { Button, Collapse } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import './cssFiles/GoogleAnalyticsApp.css';
 //import { PROPERTY_ID, CLIENT_ID } from "../from_somewhere";
 
 const GoogleAnalyticsApp = () => {
@@ -30,7 +31,9 @@ const GoogleAnalyticsApp = () => {
   return (
     <div className="App">
       <h1>Google Analytics Report</h1>
-      <Button onClick={googleLogin}>Check Analytics</Button>
+      <Button className="button-1" onClick={googleLogin}>
+        Check Analytics
+      </Button>
     </div>
   );
 };
