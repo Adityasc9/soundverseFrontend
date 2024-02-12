@@ -71,12 +71,12 @@ function AudioTypeBar(props) {
         label: "Audio counts",
         data: data.map((item) => item[1]),
         backgroundColor: [
-          "rgb(255, 165, 0, 0.5)",
-          "rgb(0, 128, 255, 0.5)",
-          "rgb(255, 0, 0, 0.5)",
-          "rgb(128, 0, 128, 0.7)",
-          "rgb(200, 100, 100, 0.6)",
-          "rgb(0, 200, 150, 0.8)",
+          "rgb(200, 0, 155)",
+          "rgb(0, 128, 255)",
+          "rgb(255, 0, 0)",
+          "rgb(128, 0, 128)",
+          "rgb(200, 100, 100)",
+          "rgb(0, 200, 150)",
         ],
       },
     ],
@@ -116,7 +116,7 @@ function AudioTypeBar(props) {
       x:{
         ticks:{
           color:"white"
-        }
+        },
       },
     },
   };
