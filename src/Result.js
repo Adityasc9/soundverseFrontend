@@ -100,7 +100,7 @@ function Result() {
         </button>
         {/* <EngagementDWM accessToken={accessToken} /> */}
         {/* <EngagementByCategory users={data.usersByCategory} activities={data.activities} /> */}
-        <PowerUsers activities={data.activities} users={data.users} />
+        {/* <PowerUsers activities={data.activities} users={data.users} /> */}
       </div>
     );
   }

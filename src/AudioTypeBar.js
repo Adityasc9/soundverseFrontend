@@ -13,7 +13,7 @@ function AudioTypeBar(props) {
   let audioTypes = props.audioTypes;
   let typeObject = {};
   for (let type of audioTypes) {
-    if (type.audioType == "stem_separated") {
+    if (type.audioType === "stem_separated") {
       typeObject[type._id] = type.stemType;
     } else {
       typeObject[type._id] = type.audioType;
@@ -42,6 +42,8 @@ function AudioTypeBar(props) {
     data["arrangement_view_exported_wav"];
   delete data["arrangement_view_exported_mp3"];
   delete data["arrangement_view_exported_wav"];
+  data["default"] = data["soundverse_default"];
+  delete data["soundverse_default"]
 
   const sortObjectEntries = (obj) => {
     let objEntries = Object.entries(obj);
@@ -106,7 +108,7 @@ function AudioTypeBar(props) {
         min: 0,
         max: Math.ceil(Math.max(...Object.values(data)) / 500) * 5000,
         ticks: {
-          stepSize: 500,
+          stepSize: 1000,
         },
       },
     },

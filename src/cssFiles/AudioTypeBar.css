@@ -2,7 +2,10 @@
     width: 800px;
     height: 500px;
 }
-.pie{
-    height: 500px;
-    width: 500px;
+
+@media only screen and (max-width: 400px) {
+  .bar{
+    width: 390px;
+    height: 400px;
+    }
 }

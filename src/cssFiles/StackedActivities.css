@@ -6,4 +6,36 @@
     text-align: center;
     margin-top: 400px;
     margin-bottom: 50px;
+    width: 1200px;
+}
+
+@media only screen and (max-width: 400px) {
+    .stacked{
+        height: 550px;
+        width: 380px;
+    }
+    .graph{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 0px;
+        height: 700px;
+        width: 380px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .stacked{
+        height: 550px;
+        width: 830px;
+    }
+    .graph{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 0px;
+        height: 700px;
+        width: 830px;
+    }
 }

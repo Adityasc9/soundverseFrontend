@@ -4,3 +4,14 @@
     justify-content: space-between;
     width: 800px;
 }
+
+@media only screen and (max-width: 400px) {
+
+  .duration{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+}
+}

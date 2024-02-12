@@ -19,17 +19,17 @@ function StackedActivities(props){
     });
     
     let data = {}
-    for(let a of filteredActivities){
-        let date = new Date(a.createdAt)
-        let activity = a.activity;
-        let time = date.toISOString().split('T')[0];
-        if (!(time in data)) {
-          data[time] = {};
-        }
-        if (!(activity in data[time])) {
-          data[time][activity] = 0;
-        }
-        data[time][activity] += 1;
+    for (let a of activities) {
+      let date = new Date(a.createdAt);
+      let activity = a.activity;
+      let time = date.toISOString().split("T")[0];
+      if (!(time in data)) {
+        data[time] = {};
+      }
+      if (!(activity in data[time])) {
+        data[time][activity] = 0;
+      }
+      data[time][activity] += 1;
     }
     let labels = Object.keys(data);
     const allActivities = {
@@ -140,7 +140,7 @@ function StackedActivities(props){
       scales: {
         y: {
           min: 0,
-          max: 3600,
+          max: Math.max(allActivities["studio_opened"])*10,
           ticks: {
             stepSize: 500,
           },
