@@ -13,11 +13,54 @@ import "./cssFiles/Result.css";
 import { useState, useEffect } from "react";
 import AudioTypeBar from "./AudioTypeBar.js";
 
+import Papa from "papaparse";
+
+
+
 function Result() {
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
   const [complete, setComplete] = useState(false);
+  const [file, setFile] = useState(null);
+  const [fileData, setFileData] = useState(null);
   let state = useLocation().state;
+
+  
+  
+  const parseCSV = (file) => {
+    return new Promise((resolve, reject) => {
+      Papa.parse(file, {
+        complete: (results) => {
+          resolve(results.data);
+        },
+        error: (error) => {
+          console.error("Error parsing CSV:", error);
+          reject(error);
+        },
+
+        skipEmptyLines: true,
+        dynamicTyping: true,
+      });
+    });
+  };
+
+  const handleFetchMetrics = async () => {
+  
+    try {
+      const parsedData = await parseCSV(file);
+      setFileData(parsedData.slice(7))
+      // Further processing of parsedData here
+    } catch (error) {
+      console.error("Failed to parse CSV:", error);
+      // Handle error
+    }
+  };
+
+
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
   if (state == null) {
     alert("log in first");
     window.location.href = "/";
@@ -26,6 +69,7 @@ function Result() {
   let accessToken = state.accessToken;
   let data = MongoConnection();
   const changeComplete = () => {
+    handleFetchMetrics();
     setComplete(!complete);
     if (endTime === "") {
       let d = new Date();
@@ -59,6 +103,11 @@ function Result() {
           placeholder="YYYY-MM-DD"
           required
         />
+        
+        <div className="selectFile">
+          <label htmlFor="fileInput">Select File:</label>
+          <input type="file" id="fileInput" onChange={handleFileChange} />
+        </div>
 
         <button className="button-1" onClick={changeComplete}>
           Fetch Metrics
@@ -66,6 +115,7 @@ function Result() {
       </div>
     );
   } else {
+    
     return (
       <div className="graphs">
         <button className="button-1" onClick={changeComplete}>
@@ -95,11 +145,12 @@ function Result() {
         />
 
         <AudioTypeBar audios={data.audios} audioTypes={data.audioTypes} />
+        <EngagementByCategory csvData={fileData} users={data.users} />
         <button className="button-1" onClick={changeComplete}>
           Reset
         </button>
         {/* <EngagementDWM accessToken={accessToken} /> */}
-        {/* <EngagementByCategory users={data.usersByCategory} activities={data.activities} /> */}
+
         {/* <PowerUsers activities={data.activities} users={data.users} /> */}
       </div>
     );

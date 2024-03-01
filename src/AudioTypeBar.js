@@ -22,7 +22,7 @@ function AudioTypeBar(props) {
   let typeCount = {};
   for (let audio of audios) {
     if (!Object.keys(audio).includes("audioType")) {
-      console.log(audio)
+
       if (!Object.keys(typeCount).includes("65545e7a85c7a3c48460ac03")) {
         typeCount["65545e7a85c7a3c48460ac03"] = 0;
       }
@@ -45,7 +45,11 @@ function AudioTypeBar(props) {
   delete data["arrangement_view_exported_wav"];
   data["default"] = data["soundverse_default"];
   delete data["soundverse_default"]
-
+  let c = 0;
+  for(let t of Object.values(data)){
+    c+= t;
+  }
+  console.log(c)
   const sortObjectEntries = (obj) => {
     let objEntries = Object.entries(obj);
     objEntries.sort((a, b) => b[1] - a[1]);

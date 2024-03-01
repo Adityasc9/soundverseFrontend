@@ -1,4 +1,4 @@
-import "./cssFiles/ActiveUsers.css"
+import "./cssFiles/ActiveUsers.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Line } from "react-chartjs-2";
@@ -17,9 +17,6 @@ const fetchData = async (accessToken, startTime, endTime) => {
     let endDate = endTime;
     let startDate = startTime;
     const dimensions = [{ name: "date" }];
-    
-    
-    
 
     const requestBody = {
       dateRanges: [{ startDate, endDate }],
@@ -53,7 +50,11 @@ function ActiveUsers(props) {
   useEffect(() => {
     const fetchDataAsync = async () => {
       try {
-        const result = await fetchData(props.accessToken, props.startTime, props.endTime);
+        const result = await fetchData(
+          props.accessToken,
+          props.startTime,
+          props.endTime
+        );
 
         // Sort the data by dimension values in ascending order
         const sortedRows = result.rows.sort((a, b) => {
@@ -140,9 +141,9 @@ function ActiveUsers(props) {
     },
   };
   const size = DAU.length;
-  const DAUsum = DAU.reduce((partialSum, a) => partialSum + a, 0)/size;
-  const MAUsum = MAU.reduce((partialSum, a) => partialSum + a, 0)/size;
-  const WAUsum = WAU.reduce((partialSum, a) => partialSum + a, 0)/size;
+  const DAUsum = DAU.reduce((partialSum, a) => partialSum + a, 0) / size;
+  const MAUsum = MAU.reduce((partialSum, a) => partialSum + a, 0) / size;
+  const WAUsum = WAU.reduce((partialSum, a) => partialSum + a, 0) / size;
   return (
     <div className="line">
       <div className="averages">
@@ -150,7 +151,9 @@ function ActiveUsers(props) {
         <h2>Average WAU: {Math.round(WAUsum * 10) / 10}</h2>
         <h2>Average MAU: {Math.round(MAUsum * 10) / 10}</h2>
       </div>
-      <Line data={chartData} options={options} />
+      <div className="graphL">
+        <Line data={chartData} options={options} />
+      </div>
     </div>
   );
 }

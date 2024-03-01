@@ -20,6 +20,11 @@ body {
     
 }
 
+.selectFile{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 /* CSS */
 .button-1 {
   background-color: #EA4C89;
