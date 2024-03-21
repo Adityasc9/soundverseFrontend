@@ -14,10 +14,9 @@ function EngagementByCategory(props){
     }
 
     let users = props.users;
-    console.log(data);
+    //console.log(data);
     let userIdentity = {};
     let identities = ["Film Maker", "Influencer", "Music Producer", "Singer/ Songwriter"];
-    let count = 0;
     let paid = [];
     let free = [];
     for (let user of users) {
@@ -36,8 +35,9 @@ function EngagementByCategory(props){
             free.push(user._id);
         }
     }
-    //console.log(paid);
-    // console.log(Object.keys(userIdentity).length);
+    console.log(paid);
+    console.log(free);
+        // console.log(Object.keys(userIdentity).length);
     //console.log(data);
     let identityTotal = {};
     let identityCount = {};
@@ -49,9 +49,14 @@ function EngagementByCategory(props){
       free: 0,
       paid: 0,
     };
+    let count = 0;
+    let countN = 0;
+
     for(let index in data){
+
         let user = data[index];
         if(user[2]=="USER_ID"){
+            count++;
             let userId = user[0];
             let identity = userIdentity[userId];
             if (!Object.keys(identityTotal).includes(identity)) {
@@ -72,13 +77,20 @@ function EngagementByCategory(props){
               PFTotal.free += user[3];
             }
         }
+        
     }
+    console.log(PFTotal);
     console.log(PFCount);
-    //console.log(identityCount);
+
     let averages = {};
     for(let key of Object.keys(identityTotal)){
         averages[key] = identityTotal[key]/identityCount[key];
     }
+    let PFaverages = {};
+    PFaverages["free"] = PFTotal.free / PFCount.free;
+    PFaverages["paid"] = PFTotal.paid / PFCount.paid;
+
+    console.log(PFaverages);
     delete averages["undefined"];
     const sortObjectEntries = (obj) => {
       let objEntries = Object.entries(obj);

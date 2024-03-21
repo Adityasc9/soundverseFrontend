@@ -30,6 +30,7 @@ function Result() {
   const parseCSV = (file) => {
     return new Promise((resolve, reject) => {
       Papa.parse(file, {
+        worker: true,
         complete: (results) => {
           resolve(results.data);
         },
@@ -38,7 +39,7 @@ function Result() {
           reject(error);
         },
 
-        skipEmptyLines: true,
+        skipEmptyLines: false,
         dynamicTyping: true,
       });
     });
@@ -166,35 +167,35 @@ function MongoConnection() {
 
   useEffect(() => {
     axios
-      .get("https://soundverse-backend-khaki.vercel.app/api/audioTypes")
+      .get("https://server-wpu7onxdja-uw.a.run.app/api/audioTypes")
       .then((response) => setAudioTypes(response.data))
       .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
     axios
-      .get("https://soundverse-backend-khaki.vercel.app/api/userA")
+      .get("https://server-wpu7onxdja-uw.a.run.app/api/userA")
       .then((response) => setActivities(response.data))
       .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
     axios
-      .get("https://soundverse-backend-khaki.vercel.app/api/users")
+      .get("https://server-wpu7onxdja-uw.a.run.app/api/users")
       .then((response) => setUsers(response.data))
       .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
     axios
-      .get("https://soundverse-backend-khaki.vercel.app/api/audios")
+      .get("https://server-wpu7onxdja-uw.a.run.app/api/audios")
       .then((response) => setAudios(response.data))
       .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
     axios
-      .get("https://soundverse-backend-khaki.vercel.app/api/prompts")
+      .get("https://server-wpu7onxdja-uw.a.run.app/api/prompts")
       .then((response) => setPrompts(response.data))
       .catch((error) => console.log(error));
   }, []);

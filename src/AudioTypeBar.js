@@ -49,7 +49,7 @@ function AudioTypeBar(props) {
   for(let t of Object.values(data)){
     c+= t;
   }
-  console.log(c)
+  //console.log(c)
   const sortObjectEntries = (obj) => {
     let objEntries = Object.entries(obj);
     objEntries.sort((a, b) => b[1] - a[1]);
